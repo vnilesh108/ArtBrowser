@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ArtBrowser</title>
+	<link rel="icon" href="images/favicon.png">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">	<link href="images/favicon.png" rel="shortcut icon">
+    <link rel="stylesheet" href="css/email.css" type="text/css">
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<style>
+
+	body{
+
+		font-family: 'futuralight' !important;
+		font-size: 14px;
+		/*font-family: 'Open Sans Condensed', sans-serif;*/
+		letter-spacing: 0.2px;
+	}
+	@font-face {
+	    font-family: 'futuralight';
+	    src: url('/assets/fonts/futurabooklight.ttf') format('truetype');
+	}
+	.email_header {
+	    position: relative;
+	    width: auto;
+	    border-bottom: 2px solid #000000;
+
+	}
+	.email_wrapper{
+		border: 1px solid #000;
+		width: 620px;
+		height: auto !important;
+
+	}
+	.email_content{
+		/*padding-left:5%;
+		padding-right:5%;
+		padding-bottom:5%;*/
+		margin-top: 0px;
+		margin-left: 25px;
+		height: 480px;
+	}
+	.email_header img {
+	    display: block;
+	}
+	.email_header .static {
+	    width: 100%;
+	    height: 131px;
+	}
+
+	.email_header .ab_logo{
+	    position: absolute;
+	    top: 10%;
+	    left: 4%;
+	    width: 20%;
+	    height: auto;
+	}
+
+	.social_connectors{
+		border-top: 2px solid #000000;
+		padding:22px;
+		margin-top: 35px;
+	}
+a{
+	color:black;
+}
+
+	@media screen and (min-device-width : 200px) and (max-device-width : 768px){
+		.email_wrapper{
+			width: 100%;
+
+
+		}
+	}
+	</style>
+</head>
+<body>
+<!--1.Artlover Order-->
+
+<p>1.Art Lover Order Confirmation</p>
+<div class="container email_wrapper">
+<div class="row">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+<div class="email_header">
+<img src="images/email banner.jpg" class="static">
+<!--<img src="images/footer_ab_logo.png" class="ab_logo">-->
+</div>
+</div>
+</div><br/><br/>
+<div class="email_content">
+<span>Dear &nbsp;<span id="art_lover_name">'Artlover',</span></span><br/>
+<p>Thank you for using ArtBrowser to discover and purchase your work of art. It delights
+us to see that our determination to understand the art that turns you on has worked!
+Soon you will have your piece on your wall and we will be even happier!</p>
+<p>This email is to confirm that we have received payment for the following order:</p>
+<p>Order Reference No: i.e.<span id="ref_no">209382</span></p>
+<p>
+<span id="artwork_title">‘Title Of Art Work’</span><br/>
+<span id="artist_name"> By Artist</span><br/>
+<span id="artwork_dimension"> Dimensions</span>
+</p>
+<p>
+<span>Total: £<span id="price">price</span></span><br/>
+<span>Shipping Cost:£<span id="s_cost">cost</span></span>
+</p>
+<p>
+You will soon receive an email with an order update once the artwork has been
+shipped. This will be accompanied with a tracking number and shipping
+information. Feel free to log in to your profile and check the status of your order.
+</p>
+<p>
+We have no doubt that you will love your work of art as much as we did when we
+chose it for ArtBrowser. If you have any query or question, do not hesitate to get in
+touch. We would be more than happy to help
+</p>
+<p>
+<span>Best Wishes</span><br>
+<img src="images/ab_logo_png.png" style="width:105px;height:60px;margin-top:28px;margin-bottom:35px;">
+</p>
+</div><br><br><br><br>
+<div id="change_it">
+<div class="social_connectors" >
+	<div style="display: inline-block;">
+		<a href="https://www.instagram.com/artbrowserapp/"><i class="fa fa-instagram fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://www.facebook.com/artbrowserappuk/"><i class="fa fa-facebook fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://twitter.com/artbrowserapp?lang=en"><i class="fa fa-twitter fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>
+	</div>
+</div>
+</div>
+</div>
+
+<!--2.Artlover shipping confirmation-->
+
+<p>2.Art Lover Shipping Confirmation</p>
+<div class="container email_wrapper" style="height:400px;">
+<div class="row">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+<div class="email_header">
+<img src="images/email banner.jpg" class="static">
+<!--<img src="images/footer_ab_logo.png" class="ab_logo">-->
+</div>
+</div>
+</div><br/><br/>
+<div class="email_content">
+<span>Dear &nbsp;<span id="art_lover_name">Name of Artlover,</span></span><br/>
+<p>Get excited! Your new artwork has been shipped and is speeding its way to your
+door!
+</p>
+<p>To help you track the parcel or to make sure you will be in to receive it, simply use the
+below tracking number with the courier company you have decided upon with your
+artist or gallery.</p>
+<p><br>
+<span>Courier Company:<span id="courier_company"></span></span><br/><br>
+<span>Tracking Number:<span id="trackingI__no"></span></span><br/><br>
+</p>
+<p>
+Your work has been expertly packed so it arrives safe and sound. However, if you
+notice any damage or feel that it is has arrived in an unsatisfactory state, do get in
+touch straight away. As promised, we will not release funds to the artist until you are
+entirely happy with your purchase. You contentment means the world to us!
+</p>
+<p>
+<span>Enjoy your new artwork! We know that you will!</span><br/><br>
+<span>The ArtBrowser Team!</span>
+</p>
+<img src="images/ab_logo_png.png" style="width:105px;height:60px;margin-top:20px;margin-bottom:35px;">
+</div>
+<div class="social_connectors">
+	<div style="display: inline-block;">
+		<a href="https://www.instagram.com/artbrowserapp/"><i class="fa fa-instagram fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://www.facebook.com/artbrowserappuk/"><i class="fa fa-facebook fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://twitter.com/artbrowserapp?lang=en"><i class="fa fa-twitter fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>
+	</div>
+</div>
+</div>
+
+<!--1.Artist Order confirmation-->
+
+<p>1.Artist Order Confirmation</p>
+<div class="container email_wrapper">
+<div class="row">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+<div class="email_header">
+<img src="images/email banner.jpg" class="static">
+<!--<img src="images/footer_ab_logo.png" class="ab_logo">-->
+</div>
+</div>
+</div><br/><br/>
+<div class="email_content">
+<span>Dear &nbsp;<span id="artist_name">Name of Artist,</span></span><br/>
+<p>We said we would help you do it and we have! Congratulations!
+You have sold the below artwork!</p>
+<p>
+<span id="artwork_title">‘Title Of Art Work’</span><br/>
+<span id="sold_for">Sold For £<span id="sold_price">Price</span>(Including shipping fees)</span><br/>
+<span id="buyer">Purchased by <span id="buyer_name">‘Name of Buyer’</span></span>
+</p>
+
+<p>
+As the next step, once you have shipped the artwork to your new buyer, please
+click here and update your order status by selecting 'shipped'.  Please then enter the shipping and tracking details when prompted on screen. Time is of the essence and we are keen for you to create a lifelong buyer who will return for more and more art!
+Please find the shipping address below:
+</p>
+<p>
+<span>Name:<span id="name"></span></span><br/>
+<span>Address To:<span id="add"></span></span><br/>
+<span>city:<span id="city"></span></span><br/>
+<span>state:<span id="state"></span></span><br/>
+<span>Zip code:<span id="zip"></span></span><br/>
+<span>Country:<span id="country"></span></span>
+</p>
+<p>
+If you have any questions or need assistance with sending your work, do get in touch
+with us on shipping@artbrowserapp.com. We would be only too happy to help you!
+</p>
+<p>
+<span>Cngratulation Once Again!</span><br/>
+<span>The ArtBrowser Team!</span>
+</p>
+<img src="images/ab_logo_png.png" style="width:105px;height:60px;margin-top:28px;margin-bottom:35px;">
+</div><br><br><br><br><br>
+<div class="social_connectors">
+	<div style="display: inline-block;">
+		<a href="https://www.instagram.com/artbrowserapp/"><i class="fa fa-instagram fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://www.facebook.com/artbrowserappuk/"><i class="fa fa-facebook fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://twitter.com/artbrowserapp?lang=en"><i class="fa fa-twitter fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>
+	</div>
+</div>
+</div>
+
+<!--2.Artist Shipping confirmation-->
+
+<p>2.Artist Shipping Confirmation</p>
+<div class="container email_wrapper">
+<div class="row">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+<div class="email_header">
+<img src="images/email banner.jpg" class="static">
+<!--<img src="images/footer_ab_logo.png" class="ab_logo">-->
+</div>
+</div>
+</div><br/><br/>
+<div class="email_content">
+<span>Dear &nbsp;<span id="artist">Name of Artist,</span></span><br/>
+<p>Thank you for taking the time to dutifully pack and ship your artwork to your buyer.
+The hard work is all done!
+</p>
+<p>
+As you know, payment by your buyer will be kept in our holding account for <span id="acc_digits">xxx</span>
+days as agreed in our returns policy guarantee to our art buyers. As soon as this
+period is over, we will immediately release funds to your bank account.
+</p>
+<p>
+<span>Until then, two things you can do:</span><br/><br>
+<span>1. Get going with your next artwork!<span><br/><br>
+<span>2. Make sure that you have given us your bank details for the transfer.  If you are unsure or would like to do this for the first time, simply <a href="profile" style="text-decoration:none;">click here </a>to go to your profile.</span><br>
+</p>
+<p>
+<span>Well done again on getting your artwork shipped! We will be in touch!</span><br/><br/><br/>
+<span>The ArtBrowser Team!</span>
+</p>
+<img src="images/ab_logo_png.png" style="width:105px;height:60px;margin-top:28px;margin-bottom:35px;">
+
+</div>
+<div class="social_connectors">
+	<div style="display: inline-block;">
+		<a href="https://www.instagram.com/artbrowserapp/"><i class="fa fa-instagram fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://www.facebook.com/artbrowserappuk/"><i class="fa fa-facebook fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://twitter.com/artbrowserapp?lang=en"><i class="fa fa-twitter fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>
+	</div>
+</div>
+</div>
+
+<!--Artist Payment Confirmation-->
+
+<p>3.Artist Payment Confirmation</p>
+<div class="container email_wrapper">
+<div class="row">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+<div class="email_header">
+<img src="images/email banner.jpg" class="static">
+<!--<img src="images/footer_ab_logo.png" class="ab_logo">-->
+</div>
+</div>
+</div><br/><br/>
+<div class="email_content">
+<span>Dear &nbsp;<span id="artist_name">Artist,</span></span><br/>
+<p>Rest easy! The wait is over and your buyer is clearly very happy with their new
+artwork!</p>
+<p>As promised, the payment amount (after fees) of £<span>xxxxx</span> has been made into your
+bank account for the following purchased work:</p>
+<p>
+<span id="artwork_title">‘Title Of Art Work’</span><br/>
+<span id="sold_for">Sold For £<span id="sold_price">Price</span>(Including shipping fees)</span><br/>
+<span id="buyer">Purchased by <span id="buyer_name">‘Name of Buyer’</span></span>
+</p>
+<p>
+If you face any problem receiving the funds, please do not hesitate to get in touch so
+we can get to the bottom of it as quickly as possible for you.
+</p>
+<p>
+We at ArtBrowser hope that this money will help you to continue your excellent
+work. You deserve it!
+</p>
+<p>
+<span>Best Wishes</span><br/><br/>
+<span>The ArtBrowser Team</span><br/>
+</p>
+<img src="images/ab_logo_png.png" style="width:105px;height:60px;margin-top:28px;margin-bottom:35px;">
+</div>
+<div class="social_connectors">
+	<div style="display: inline-block;">
+		<a href="https://www.instagram.com/artbrowserapp/"><i class="fa fa-instagram fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://www.facebook.com/artbrowserappuk/"><i class="fa fa-facebook fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://twitter.com/artbrowserapp?lang=en"><i class="fa fa-twitter fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>
+	</div>
+</div>
+</div>
+
+<!-- Gallery Order Confirmation-->
+
+<p>1.Gallery Order Confirmation</p>
+<div class="container email_wrapper">
+<div class="row">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+<div class="email_header">
+<img src="images/email banner.jpg" class="static">
+<!--<img src="images/footer_ab_logo.png" class="ab_logo">-->
+</div>
+</div>
+</div><br/><br/>
+<div class="email_content">
+<span>Dear &nbsp;<span id="gallery_name">Name of gallery,</span></span><br/>
+<p>We said we would help you do it and we have! Congratulations!
+You have sold the below artwork!</p>
+<p>
+<span id="artwork_title">‘Title Of Art Work’</span><br/>
+<span id="sold_for">Sold For £<span id="sold_price">Price</span>(Including shipping fees)</span><br/>
+<span id="buyer">Purchased by <span id="buyer_name">‘Name of Buyer’</span></span>
+</p>
+
+<p>
+As the next step, once you have shipped the artwork to your new buyer, please
+click here and update your order status by selecting 'shipped'.  Please then enter the shipping and tracking details when prompted on screen. Time is of the essence and we are keen for you to create a lifelong buyer who will return for more and more art!
+Please find the shipping address below:
+</p>
+<p>
+<span>Name:<span id="name"></span></span><br/>
+<span>Address To:<span id="add"></span></span><br/>
+<span>city:<span id="city"></span></span><br/>
+<span>state:<span id="state"></span></span><br/>
+<span>Zip code:<span id="zip"></span></span><br/>
+<span>Country:<span id="country"></span></span>
+</p>
+<p>
+If you have any questions or need assistance with sending your work, do get in touch
+with us on shipping@artbrowserapp.com. We would be only too happy to help you!
+</p>
+<p>
+<span>Cngratulation Once Again!</span><br/><br>
+<span>The ArtBrowser Team!</span>
+</p>
+<img src="images/ab_logo_png.png" style="width:105px;height:60px;margin-top:28px;margin-bottom:35px;">
+</div><br><br><br><br><br><br>
+<div class="social_connectors">
+	<div style="display: inline-block;">
+		<a href="https://www.instagram.com/artbrowserapp/"><i class="fa fa-instagram fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://www.facebook.com/artbrowserappuk/"><i class="fa fa-facebook fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://twitter.com/artbrowserapp?lang=en"><i class="fa fa-twitter fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>
+	</div>
+</div>
+</div>
+<!--Gallery Shipping Confirmation-->
+
+<p>2.Gallery Shipping Confirmation</p>
+<div class="container email_wrapper">
+<div class="row">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+<div class="email_header">
+<img src="images/email banner.jpg" class="static">
+<!--<img src="images/footer_ab_logo.png" class="ab_logo">-->
+</div>
+</div>
+</div><br/><br/>
+<div class="email_content">
+<span>Dear &nbsp;<span id="gallery">Name of gallery,</span></span><br/>
+<p>Thank you for taking the time to dutifully pack and ship your artwork to your buyer.
+The hard work is all done!
+</p>
+<p>
+As you know, payment by your buyer will be kept in our holding account for <span id="acc_digits">xxx</span>
+days as agreed in our returns policy guarantee to our art buyers. As soon as this
+period is over, we will immediately release funds to your bank accoun
+</p>
+<p>
+<span>Until then, two things you can do:</span><br/><br>
+<span>1. Get going with your next artwork!<span><br/><br>
+<span>2. Make sure that you have given us your bank details for the transfer.  If you are unsure or would like to do this for the first time, simply <a href="profile" style="text-decoration:none;">click here</a> to go to your profile.</span><br>
+</p>
+<p>
+<span>Well done again on getting your artwork shipped! We will be in touch!</span><br/><br/><br/>
+<span>The ArtBrowser Team!</span>
+</p>
+<img src="images/ab_logo_png.png" style="width:105px;height:60px;margin-top:28px;margin-bottom:35px;">
+</div>
+<div class="social_connectors">
+	<div style="display: inline-block;">
+		<a href="https://www.instagram.com/artbrowserapp/"><i class="fa fa-instagram fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://www.facebook.com/artbrowserappuk/"><i class="fa fa-facebook fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://twitter.com/artbrowserapp?lang=en"><i class="fa fa-twitter fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>
+	</div>
+</div>
+</div>
+<!--Gallery Payment Confirmation-->
+
+<p>3.Gallery Payment Confirmation</p>
+<div class="container email_wrapper">
+<div class="row">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+<div class="email_header">
+<img src="images/email banner.jpg" class="static">
+<!--<img src="images/footer_ab_logo.png" class="ab_logo">-->
+</div>
+</div>
+</div><br/><br/>
+<div class="email_content">
+<span>Dear &nbsp;<span id="gallery_name">gallery,</span></span><br/>
+<p>Rest easy! The wait is over and your buyer is clearly very happy with their new
+artwork!</p>
+<p>As promised, the payment amount (after fees) of £<span>xxxxx</span> has been made into your
+bank account for the following purchased work:</p>
+<p>
+<span id="artwork_title">‘Title Of Art Work’</span><br/>
+<span id="sold_for">Sold For £<span id="sold_price">Price</span>(Including shipping fees)</span><br/>
+<span id="buyer">Purchased by <span id="buyer_name">‘Name of Buyer’</span></span>
+</p>
+<p>
+If you face any problem receiving the funds, please do not hesitate to get in touch so
+we can get to the bottom of it as quickly as possible for you.
+</p>
+<p>
+We at ArtBrowser hope that this money will help you to continue your excellent
+work. You deserve it!
+</p>
+<p>
+<span>Best Wishes</span><br/><br/>
+<span>The ArtBrowser Team</span>
+</p>
+<img src="images/ab_logo_png.png" style="width:105px;height:60px;margin-top:28px;margin-bottom:35px;">
+
+</div>
+<div class="social_connectors">
+	<div style="display: inline-block;">
+		<a href="https://www.instagram.com/artbrowserapp/"><i class="fa fa-instagram fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://www.facebook.com/artbrowserappuk/"><i class="fa fa-facebook fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://twitter.com/artbrowserapp?lang=en"><i class="fa fa-twitter fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>
+	</div>
+</div>
+</div>
+
+<!-- Gallery Signup Confirmation-->
+
+<p>1.Gallery Signup Confirmation</p>
+<div class="container email_wrapper">
+<div class="row">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+<div class="email_header">
+<img src="images/email banner.jpg" class="static">
+<!--<img src="images/footer_ab_logo.png" class="ab_logo">-->
+</div>
+</div>
+</div><br/><br/>
+<div class="email_content">
+<span>Dear &nbsp;<span id="gallery_name">gallery,</span></span><br/><br>
+<p>Thank you for signing up to ArtBrowser! </p><br>
+<p>
+As you would guess, we receive hundreds of registrations by artists and galleries. We always have to be sure that you have the right kind of work that would appeal to our wide spectrum of art lovers and buyers. We don’t want to waste your time - we want your work to reach and be enjoyed by the widest audience possible!
+</p><br>
+<p>
+Please bear with us as we decide whether ArtBrowser is the right home for your art. If successful, you will receive an email from us confirming your inclusion in the ArtBrowser universe. Do look out for it!
+</p><br>
+<p>
+<span>The ArtBrowser Team</span>
+</p>
+<img src="images/ab_logo_png.png" style="width:105px;height:60px;margin-top:20px;margin-bottom:35px;">
+</div>
+<div class="social_connectors">
+	<div style="display: inline-block;">
+		<a href="https://www.instagram.com/artbrowserapp/"><i class="fa fa-instagram fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://www.facebook.com/artbrowserappuk/"><i class="fa fa-facebook fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://twitter.com/artbrowserapp?lang=en"><i class="fa fa-twitter fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>
+	</div>
+</div>
+</div>
+
+<!-- Artist Signup Conformation-->
+
+<p>1.Artist Signup Confirmation</p>
+<div class="container email_wrapper">
+<div class="row">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+<div class="email_header">
+<img src="images/email banner.jpg" class="static">
+<!--<img src="images/footer_ab_logo.png" class="ab_logo">-->
+</div>
+</div>
+</div><br/><br/>
+<div class="email_content">
+<span>Dear &nbsp;<span id="artist_name">artist,</span></span><br/><br>
+<p>Thank you for signing up to ArtBrowser! </p>
+<br>
+<p>
+As you would guess, we receive hundreds of registrations by artists and galleries. We always have to be sure that you have the right kind of work that would appeal to our wide spectrum of art lovers and buyers. We don’t want to waste your time - we want your work to reach and be enjoyed by the widest audience possible!
+</p><br>
+<p>
+Please bear with us as we decide whether ArtBrowser is the right home for your art. If successful, you will receive an email from us confirming your inclusion in the ArtBrowser universe. Do look out for it!
+</p>
+<br>
+<p>
+<span>The ArtBrowser Team</span>
+</p>
+<img src="images/ab_logo_png.png" style="width:105px;height:60px;margin-top:20px;margin-bottom:-20px;">
+
+</div>
+<div class="social_connectors">
+	<div style="display: inline-block;">
+		<a href="https://www.instagram.com/artbrowserapp/"><i class="fa fa-instagram fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://www.facebook.com/artbrowserappuk/"><i class="fa fa-facebook fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://twitter.com/artbrowserapp?lang=en"><i class="fa fa-twitter fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>
+	</div>
+</div>
+</div>
+
+<!-- Gallery Approved Signup-->
+
+<p>1.Gallery Approved Signup</p>
+<div class="container email_wrapper">
+<div class="row">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+<div class="email_header">
+<img src="images/email banner.jpg" class="static">
+<!--<img src="images/footer_ab_logo.png" class="ab_logo">-->
+</div>
+</div>
+</div><br/><br/>
+<div class="email_content">
+<span>Dear &nbsp;<span id="gallery_name">gallery,</span></span><br/>
+<p>Thank you for signing up to ArtBrowser! </p>
+<p>
+As you would guess, we receive thousands of registrations by artists and galleries such as you every day. We always have to be sure that you have the right kind of work that would appeal to our wide spectrum of art lovers and buyers.
+</p>
+<p>
+We are over the moon to tell you that your art has been approved and you are now part of the ArtBrowser universe! Your work will be at the fingertips of thousands of art lovers and buyers searching for art every day on ArtBrowser!
+</p>
+<p>
+The next step for you is to log in and keep your profile well up-to-date.  Add as much material as possible to make your art as attractive as possible to buyers. Also, you may want to use your profile to start following other artists and galleries, or even art lovers, that you feel have commonality with you or that simply interest you. The more connections you gain, the greater the number of eyes that will track back to your art!
+</p>
+<p>
+If you have any further questions, do not hesitate to get in touch with ArtBrowser on <a href=#>info@artbrowserapp.com</a>We would be delighted to help you in any way we can.
+</p>
+<p>
+<span>Once again, congratulations!</span><br/><br/>
+<span>The ArtBrowser Team</span>
+</p>
+<img src="images/ab_logo_png.png" style="width:105px;height:60px;margin-top:18px;margin-bottom:35px;">
+</div><br><br>
+<div class="social_connectors">
+	<div style="display: inline-block;">
+		<a href="https://www.instagram.com/artbrowserapp/"><i class="fa fa-instagram fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://www.facebook.com/artbrowserappuk/"><i class="fa fa-facebook fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://twitter.com/artbrowserapp?lang=en"><i class="fa fa-twitter fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>
+	</div>
+</div>
+</div>
+
+<!--Artist Approved Signup-->
+
+<p>1.Artist Approved Signup</p>
+<div class="container email_wrapper">
+<div class="row">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+<div class="email_header">
+<img src="images/email banner.jpg" class="static">
+<!--<img src="images/footer_ab_logo.png" class="ab_logo">-->
+</div>
+</div>
+</div><br/><br/>
+<div class="email_content">
+<span>Dear &nbsp;<span id="artist_name">artist,</span></span><br/>
+<p>Thank you for signing up to ArtBrowser! </p>
+<p>
+As you would guess, we receive thousands of registrations by artists and galleries such as you every day. We always have to be sure that you have the right kind of work that would appeal to our wide spectrum of art lovers and buyers.
+</p>
+<p>
+We are over the moon to tell you that your art has been approved and you are now part of the ArtBrowser universe! Your work will be at the fingertips of thousands of art lovers and buyers searching for art every day on ArtBrowser!
+</p>
+<p>
+The next step for you is to log in and keep your profile well up-to-date.  Add as much material as possible to make your art as attractive as possible to buyers. Also, you may want to use your profile to start following other artists and galleries, or even art lovers, that you feel have commonality with you or that simply interest you. The more connections you gain, the greater the number of eyes that will track back to your art!
+</p>
+<p>
+If you have any further questions, do not hesitate to get in touch with ArtBrowser on <a href=#>info@artbrowserapp.com</a>We would be delighted to help you in any way we can.
+</p>
+<p>
+<span>Once again, congratulations!</span><br/><br/>
+<span>The ArtBrowser Team</span>
+</p>
+<img src="images/ab_logo_png.png" style="width:105px;height:60px;margin-top:20px;margin-bottom:0px;">
+</div><br><br><br>
+<div class="social_connectors">
+	<div style="display: inline-block;">
+		<a href="https://www.instagram.com/artbrowserapp/"><i class="fa fa-instagram fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://www.facebook.com/artbrowserappuk/"><i class="fa fa-facebook fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://twitter.com/artbrowserapp?lang=en"><i class="fa fa-twitter fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>
+	</div>
+</div>
+</div>
+
+<!-- Artlover Approved Signup-->
+<p>1.Art Lover Signup Confirmation</p>
+<div class="container email_wrapper">
+<div class="row">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+<div class="email_header">
+<img src="images/email banner.jpg" class="static">
+<!--<img src="images/footer_ab_logo.png" class="ab_logo">-->
+</div>
+</div>
+</div><br/><br/>
+<div class="email_content">
+<span>Dear &nbsp;<span id="artlover_name">artlover,</span></span><br/><br>
+<p>Thank you for signing up to ArtBrowser! </p>
+<p>
+We are over the moon to tell you that your profile has been created and you are now part of the ArtBrowser universe!
+</p>
+<p>
+The next step for you is to verify your account by <a href="#">clicking here</a>.  Once verified, add as much information as possible so ArtBrowser can learn and cater to your taste.  Start liking and disliking artworks so we know which artworks from the AB cosmos you're most likely to connect with.  Also, you may want to use your profile to start following other artists and galleries, or even art lovers, that you feel have commonality with you or that simply interest you.
+</p>
+<p>
+If you have any further questions, do not hesitate to get in touch with ArtBrowser on <a href=#>info@artbrowserapp.com</a>We would be delighted to help you in any way we can.
+</p><br>
+<p>
+<span>Once again, congratulations!</span><br/><br/>
+<span>The ArtBrowser Team</span>
+</p>
+<img src="images/ab_logo_png.png" style="width:105px;height:60px;margin-top:10px;margin-bottom:-30px;">
+</div>
+<div class="social_connectors">
+	<div style="display: inline-block;">
+		<a href="https://www.instagram.com/artbrowserapp/"><i class="fa fa-instagram fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://www.facebook.com/artbrowserappuk/"><i class="fa fa-facebook fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>&nbsp;&nbsp;
+		<a href="https://twitter.com/artbrowserapp?lang=en"><i class="fa fa-twitter fa-2x" aria-hidden="true" style="color:black" style="color:black"></a></i>
+	</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Trending</title>
+    <link rel="stylesheet" href="css/trending.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="icon" href="images/favicon.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">    <!--======Css Files=========-->
+
+    <link rel="stylesheet" type="text/css" href="css/footer_1280.css">
+    <link rel="stylesheet" href="css/header.css">
+
+
+
+
+    <!--=============Jquery Files==============-->
+    <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="js/artist_profile.js" rel="script"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/header.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+  </head>
+  <body>
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title> ArtBrowser</title>
+        <link rel="icon" href="images/favicon.png">
+        <meta name="viewport" content="width=device-width" content="initial-scale=1">
+        <link href="css/header_1366.css" rel="stylesheet">
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css"
+        href="lib/bootstrap/css/bootstrap.css">
+        <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+                crossorigin="anonymous"></script>
+        <script src="js/firebase.js"></script>
+        <script src="js/header.js"></script>
+    </head>
+    <body>
+    <header id="header">
+        <div>
+
+            <nav id="nav-menu-container" style="float: left">
+                <ul class="nav-menu">
+                    <li>
+                        <a href="index.html">
+                                <img src="images/ab_logo.png" alt="" title="" class="img-responsive" id="header_logo"/>
+                        </a>
+
+                    </li>
+                    <li><a href="index.html" class="custom-link">Home </a></li>
+                    <li><a href="aboutab.html" class="custom-link">About AB</a></li>
+                    <li><a href="./artwork.html" class="custom-link">Artwork</a></li>
+                    <li><a href="./artist.html" class="custom-link">Artists</a></li>
+                    <li><a href="./galleries.html" class="custom-link" >Galleries</a></li>
+                    <li><a href="events.html" class="custom-link">Events</a></li>
+                    <li><a href="events.html" class="custom-link" style="display: none" >News</a></li>
+                    <li style="margin-right: 36px">
+                        <input type="text" placeholder="Search Artwork" class="search" id="artwork_head">
+                        <img src="images/next_search.png" id="artwork_btn"/>
+                    </li>
+                    <li> <div id="vertical_line_left"></div></li>
+                    <li id="art_cart">
+                        <a href="art_basket_guest.html">
+                            <div id="cart-container">
+                                <div id="cart">
+                                    <img src="images/cart.png">
+                                </div>
+                                <span id="itemCount"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <li> <div id="vertical_line_right"></div></li>
+                    <li>
+                        <a class="custom-link"><img src="images/notification.png" style="display: none" id="tri_img"></a>
+                    </li>
+                    <li><a id="signup" class="signup_login custom-link" onclick="show()"><u>Sign Up</u></a></li>
+
+                    <li><a id="login" class="signup_login custom-link" onclick="showloginbutton()"><u>LogIn</u></a></li>
+                    <li><span id="user_name"></span></li>
+                    <li ><a id="logout" class="custom-link" style="display:none"><u>LogOut</u></a></li>
+                    </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <!--===========Header Section Start=================-->
+
+    <div class="popup" id="popupsign">
+
+        <div class="popupcontent" id="popupcontent">
+            <div class="signupform">
+                <div id="signupformcontent" style="display: none;">
+                    <div><a class="cross"><img src="images/cross-out.png" onclick="hide()"></a></div>
+
+                    <form>
+                        <div class="ab_img"><img src="./images/ab_signup.jpg" alt="ArtBrowser"></div><br/>
+                        <div class="imgcontent">
+                            <p>welcome to global market place for art lovers,artist and galleries</p>
+                            <span>signup below:</span>
+                        </div><br/><br>
+                        <button type="button" class="emailsignup" onclick="showSignupEmail()">SIGNUP USING YOUR EMAIL</button><br/><br/>
+                        <button type="button" class="fbsignup" id="fb_signup_btn">SIGNUP WITH FACEBOOK&nbsp;<img src="images/fb_b.png"></button>
+                        <br/><br/>
+                        <p id="signup_fb_error_msg" style="color:red ; display:none;"></p>
+                        <button type="button" id="google_signup_btn" class="googlesignup">SIGNUP WITH GOOGLE &nbsp;<img src="images/google_b.png"></button>
+                        <br/><br/>
+                        <p id="signup_google_error_msg" style="color:red ; display:none;"></p>
+                        <div class="checkmember">Already a member?&nbsp;<a onclick="showlogin()"><u>Log In here</u></a></div>
+                        <hr style="text-align: center;color: grey">
+                        <div class=" conditions"><p>By signing up to ArtBrowser,You agree to our <p><a href="terms_and_conditions.html"><u>Terms Of Use</u></a> And<a href="terms_and_conditions.html"><u> Privacy Policy</u></a></div>
+                    </form>
+                </div>
+                <div id="signupformemail">
+                    <div><a class="cross"><img src="images/cross-out.png" onclick="hideSignupEmail()" style="margin-top: 5px"></a></div>
+                    <form id="signupForm">
+                        <div class="ab_img"><img src="./images/ab_signup.jpg" alt="ArtBrowser"></div><br/>
+                        <div class="imgcontent"><p>Please signup by entering your name , email and password.</p></div><br/>
+                        <input type="text" class="fullname" id="u_name" placeholder="User Name">
+                        <br/><br/>
+                        <input type="text" class="email" id="u_email" placeholder="Email address" required="">
+                        <br/> <br/>
+                        <input type="password" class="password" id="u_pass" placeholder="Create a password">
+                        <br/><br/>
+                        <button type="submit" id="signup_btn">Sign Up</button>
+                        <br/><br/>
+                        <p class="error_msg" id="error_id" style="color:red ; display:none;"></p>
+                        <div class="checkmember">Already a member?&nbsp;<a onclick="showloginbutton()"><u>Log In here</u></a>
+                        </div>
+                        <hr style="text-align: center;color: grey;">
+                          <div class="conditions"><p>By signing up to ArtBrowser,You agree to our <p><a href="terms_and_conditions.html"><u>Terms Of Use</u></a> And<a href="terms_and_conditions.html"><u> Privacy Policy</u></a></div>
+                    </form>
+                </div>
+                <div id="loginformcontent" style="display: none;">
+                    <div>
+                        <a class="cross">
+                            <img src="images/cross-out.png" onclick="hidelogin()" style="margin-top: 5px">
+                        </a>
+                    </div>
+
+                    <form id="loginForm">
+                        <div class="ab_img">
+                            <img src="./images/ab_signup.jpg" alt="ArtBrowser">
+
+                        </div>
+                        <br/>
+                        <div class="imgcontent">
+                            <p>Login in to ArtBrowser</p>
+                        </div>
+                        <input type="text" id="login_email" class="email" placeholder="Email" required>
+                        <br/> <br/>
+                        <input type="password" id="login_pass" class="password" placeholder="Password" required>
+
+                        <br/><br/>
+                        <button type="submit" id="login_btn">LOGIN</button>
+                        <br/><br/>
+                        <p id="login_error_msg" style="color:red ; display:none;"></p>
+                        <hr>
+
+                        <button type="button" class="fbsignup" id="fb_login_btn">LOGIN WITH
+                            FACEBOOK &nbsp;&nbsp;<img src="images/fb_b.png">
+                        </button>
+                        <br/><br/>
+                        <p id="login_with_fb_error_msg" style="color:red ; display:none;"></p>
+
+                        <button type="button" class="googlesignup" id="google_login_btn">LOGIN
+                            WITH GOOGLE &nbsp;&nbsp;<img src="images/google_b.png">
+                        </button><br/>
+                        <p id="login_with_google_error_msg" style="color:red ; display:none;"></p>
+
+
+                        <hr style="width: 580px;text-align: center;color: grey">
+                        <div class=" conditions"><p>By signing up to ArtBrowser,You agree to our <p><a href="terms_and_conditions.html"><u>Terms Of Use</u></a> And<a href="terms_and_conditions.html"><u> Privacy Policy</u></a></div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class = "container" id="artbrowser_dummy"style="display: none; z-index:10px;">
+        <div class="popupcontent" id="popupcontent">
+            <div class="signupform">
+                <div id="signupformcontent">
+                    <form id="private_access_form" style="color: #2F2E2E">
+                        <div class="ab_img"><img src="./images/ab_signup.jpg" alt="ArtBrowser"></div><br/>
+                        <div class="imgcontent" >
+                            <p>Welcome to a global marketplace for art lovers, artists and galleries.</p>
+                            <h5> Private Access Only</h5>
+                            <h5>Stay tuned for the public release, launching soon!</h5>
+                        </div><br/>
+                        <input type="text" id="username" class="email" placeholder="UserName" required><br/><br/>
+                        <input type="password" id="pass" class="password" placeholder="Password" required><br/><br/>
+                        <input type="hidden" id="private_id" value="private_access">
+                        <button class="emailsignup ab_login" type="submit" style="margin-bottom: 5px">LOGIN</button><br/><br/>
+                        <hr style="text-align: center;color: grey;margin: 0px">
+                        <!--<div class=" conditions"><p>By signing up to ArtBrowser,You agree to our <p><a><u>Terms Of Use</u></a> And<a><u> Privacy Policy</u></a></div>-->
+
+                    </form>
+                    <div class="">
+                        <!-- Begin MailChimp Signup Form -->
+                        <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+                        <style type="text/css">
+                            #mc_embed_signup{background:#ffffff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+                            /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+                               We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                        </style>
+                        <center>
+                            <div id="mc_embed_signup">
+                                <form action="//artbrowserapp.us15.list-manage.com/subscribe/post?u=730217249039cfe0b92dda180&amp;id=f679301e73" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                    <div id="mc_embed_signup_scroll" style="background: #fff;text-align: center;">
+
+                                        <input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL" style="display: inline;border-radius: 0px; " placeholder=" Enter Your Email">&nbsp;
+
+                                        <div id="mce-responses" class="clear">
+                                            <div class="response" id="mce-error-response"style="display:none;margin-top: -12px;margin-left: 10%;position: relative"></div>
+                                            <div class="response" id="mce-success-response" style="display:none;margin-top: -12px;margin-left: 10%;position: relative"></div>
+                                        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                        <!--   <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_beea2fa3b77fc77f26fc7ad18_10272e2a01" tabindex="-1" value=""></div> -->
+                                        <input type="submit" value="Subscribe Now" name="subscribe" id="mc-embedded-subscribe" class="button" style="width: 140px;height: 40px;display: inline;border-radius: 0px;background: #000000"></div>
+                                </form>
+                            </div>
+                        </center><br/>
+
+                        <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';}($));var $mcj = $.noConflict(true);</script>
+                        <!--End mc_embed_signup-->
+
+                    </div>
+                </div>
+        </div>
+        </div>
+        </div>
+    <!--============Header Section End ===================-->
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/superfish/superfish.min.js"></script>
+    <script src="lib/morphext/morphext.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="js/custom.js"></script>
+
+    </body>
+    </html>
+
+
+        <p style="text-align:center;font-size:18px;font-weight:200;letter-spacing:2px">MOST TRENDING</p>
+    <div class="txtNew" style="left: 250px; width: 788px; position: absolute; top:50px;"><p style="font-size:14px; text-align:center;"><span style="font-size:14px;"><span style="font-family:futura-lt-w01-book,sans-serif;">This is where you come to see&nbsp;shooting stars&nbsp;from the Artbrowser cosmos.&nbsp; Browse which works are trending,&nbsp;on&nbsp;the rise or have made it&nbsp;to the all time wall&nbsp;based on your upvotes.&nbsp;&nbsp;</span></span></p></div>
+    <div class="btns" style="margin-top:100px;margin-left:350px;margin-bottom:25px;">
+    <a href="#" style="color:grey;"><button type="button" name="Trending" style="margin-right:30px">Trending</button></a>
+    <a href="#" style="color:grey;"><button type="button" name="new" style="margin-right:30px">New</button></a>
+    <a href="#" style="color:grey;"><button type="button" name="button" style="margin-right:30px">All Time</button></a>
+</div>
+<hr>
+<br>
+<div class="links" style="font-size:14px;letter-spacing:2px;">
+<a href="#" style="color:grey;margin-right:30px;margin-left:50px">View All</a>
+<a href="#" style="color:grey;margin-right:30px">Originals</a>
+<a href="#" style="color:grey;">Prints</a>
+</div>
+<div class="sort_by">
+  <span style="margin-left:880px;margin-top:30px;letter-spacing:2px;">Sort By:</span>
+<select class=" styled_select select_sort_by" name="category" id="category_box" style="margin-left:96  0px;font-weight:100;">
+    <option value="" selected="" data-default="" id="select_category">Latest Release</option>
+    <option value="low_to_high">Low to High Price </option>
+    <option value="high_to_low">High to Low Price</option>
+</select>
+</div>
+<br>
+<!--images-->
+          <div class="row" style="margin-left:40px;">
+          <div class="col-xs-12 col-sm-4"><img src="images/ba1.jpg" alt=""></div>
+          <div class="col-xs-12 col-sm-4"><img src="images/2.jpg" alt=""></div>
+          <!-- Optional: clear the XS cols if their content doesn't match in height -->
+          <div class="clearfix visible-xs-block"></div>
+          <div class="col-xs-12 col-sm-4"><img src="images/3.jpg" alt=""></div>
+          </div>
+
+          <div class="txtNew"style="left:52px; width: 228px; position: absolute; top: 600px;"><h2 class="font_2" style="font-size:14px;"><span style="font-size:14px;"><span style="font-family:futura-lt-w01-book,sans-serif; letter-spacing:0.2em;font-weight:bold;">Artist Name</span></span><br>
+<span style="font-style:italic;"><span style="font-size:13px;"><span style="font-family:futura-lt-w01-book,sans-serif; letter-spacing:0.2em;"><span style="font-weight:normal;"><span class="color_14">Artwork Title, Year<br>
+Medium. Size</span></span></span></span></span><br>
+<span class="color_14"><span style="font-size:12px;"><span style="font-family:futura-lt-w01-book,sans-serif; letter-spacing:0.2em;"><span style="font-weight:normal;">£PRICE</span></span></span></span></h2></div>
+
+<!-- <div class="like_dislike_btns">
+<img src="images/dislike arrow.png" alt="">
+</div> -->
+          <div class="row" style="margin-left:40px;">
+          <div class="col-xs-12 col-sm-4"><img src="images/ba1.jpg" alt=""></div>
+          <div class="col-xs-12 col-sm-4"><img src="images/2.jpg" alt=""></div>
+          <!-- Optional: clear the XS cols if their content doesn't match in height -->
+          <div class="clearfix visible-xs-block"></div>
+          <div class="col-xs-12 col-sm-4"><img src="images/3.jpg" alt=""></div>
+          </div>
+
+          <div class="txtNew"style="left:52px; width: 228px; position: absolute; top: 600px;"><h2 class="font_2" style="font-size:14px;"><span style="font-size:14px;"><span style="font-family:futura-lt-w01-book,sans-serif; letter-spacing:0.2em;font-weight:bold;">Artist Name</span></span><br>
+<span style="font-style:italic;"><span style="font-size:13px;"><span style="font-family:futura-lt-w01-book,sans-serif; letter-spacing:0.2em;"><span style="font-weight:normal;"><span class="color_14">Artwork Title, Year<br>
+Medium. Size</span></span></span></span></span><br>
+<span class="color_14"><span style="font-size:12px;"><span style="font-family:futura-lt-w01-book,sans-serif; letter-spacing:0.2em;"><span style="font-weight:normal;">£PRICE</span></span></span></span></h2></div>
+
+
+
+          <div class="row" style="margin-left:40px;">
+          <div class="col-xs-6 col-sm-4"><img src="images/ba1.jpg" alt=""></div>
+          <div class="col-xs-6 col-sm-4"><img src="images/2.jpg" alt=""></div>
+          <!-- Optional: clear the XS cols if their content doesn't match in height -->
+          <div class="clearfix visible-xs-block"></div>
+          <div class="col-xs-6 col-sm-4"><img src="images/3.jpg" alt=""></div>
+          </div>
+
+
+          <div class="row" style="margin-left:40px;">
+          <div class="col-xs-12 col-sm-4"><img src="images/ba1.jpg" alt=""></div>
+          <div class="col-xs-12 col-sm-4"><img src="images/2.jpg" alt=""></div>
+          <!-- Optional: clear the XS cols if their content doesn't match in height -->
+          <div class="clearfix visible-xs-block"></div>
+          <div class="col-xs-12 col-sm-4"><img src="images/3.jpg" alt=""></div>
+          </div>
+
+          <div id="footer" style="margin-top:50px;">
+              <div class="row" >
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 left_sec">
+                      <center>
+                          <img src="images/footer_ab_logo.png" class="img-responsive" id="change_1280">
+                      </center>
+                  </div>
+                  <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12" id="subscribe_footer">
+                      <div class="subscribe_footer_content">
+                          <div class="row">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                  <p style="color: #A0A09F;text-align: center"> Want more? Why not subscribe to our newsletter for the very latest news and info from the ArtBrowser&nbsp;universe?</p>
+
+                              </div>
+                          </div>
+                          <!-- Begin MailChimp Signup Form -->
+                          <center>
+                              <div class="row">
+                                  <div id="mail_chimp_form">
+                                      <!-- Begin MailChimp Signup Form -->
+                                      <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+                                      <style type="text/css">
+                                          #mc_embed_signup {
+                                              background: #fff;
+                                              clear: left;
+                                              font: 14px Helvetica, Arial, sans-serif;
+                                          }
+                                          /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+                                 We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                                      </style>
+                                      <center>
+                                          <div id="mc_embed_signup">
+                                              <form action="//artbrowserapp.us15.list-manage.com/subscribe/post?u=730217249039cfe0b92dda180&amp;id=f679301e73" method="post" id="mc-embedded-subscribe-form" style="background: #2E2F2F" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                                  <div id="mc_embed_signup_scroll" style="background: #2E2F2F;text-align: center;">
+
+                                                      <input type="text" value="" name="FNAME" class="form-control" id="mce-FNAME" style="display: inline;border-radius: 0px" placeholder="Name">&nbsp;
+                                                      <input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL" style="display: inline;border-radius: 0px; " placeholder="Email">&nbsp;
+
+                                                      <div id="mce-responses" class="clear">
+                                                          <div class="response" id="mce-error-response" style="display:none"></div>
+                                                          <div class="response" id="mce-success-response" style="display:none"></div>
+                                                      </div>
+                                                      <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                                      <!--   <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_beea2fa3b77fc77f26fc7ad18_10272e2a01" tabindex="-1" value=""></div> -->
+                                                      <input type="submit" value="Subscribe Now" name="subscribe" id="mc-embedded-subscribe" class="button" style="width: 159px;height: 40px;display: inline;margin-top:-1px;;border-radius:0px;">
+                                                  </div>
+                                              </form>
+                                          </div>
+                                      </center>
+                                      <br/>
+                                      <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+                                      <script type='text/javascript'>
+                                          (function($) {
+                                              window.fnames = new Array();
+                                              window.ftypes = new Array();
+                                              fnames[0] = 'EMAIL';
+                                              ftypes[0] = 'email';
+                                              fnames[1] = 'FNAME';
+                                              ftypes[1] = 'text';
+                                          }($));
+                                          var $mcj = $.noConflict(true);
+                                      </script>
+                                      <!--End mc_embed_signup-->
+                                  </div>
+                              </div>
+                              <div id="footerlinks"class="row">
+                                  <div class="col-lg-12  col-md-12 col-sm-12 col-xs-12">
+                                      <p id="ab_links" style="margin-top:40px;">
+                                          <span><a href="terms_and_conditions.html" target="_self" style="margin-right:-7px;">Terms &amp; Conditions</a></span> &nbsp;
+                                          <span>|</span>
+                                          <span><a href="delivery_and_return.html" target="_self" style="margin-left:-3px;">Delivery&nbsp;&amp;&nbsp;Returns</a></span> &nbsp;
+                                          <span style="margin-left:-10px;">|</span>
+                                          <span><a href="contact.html" target="_self" style="margin-left:1px;">Contact</a></span> &nbsp;
+                                          <span style="margin-left:-10px;">|</span>
+                                          <span style="margin-left:-2px;"> Copyright © 2017 ArtBrowser  - All rights reserved.</span>
+                                      </p>
+                                  </div>
+                              </div>
+                          </center>
+                      </div>
+                  </div>
+                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" id="footer_right_sec">
+                      <div class="footer_right_inner">
+                          <p id="footer_right">
+                              <a href="aboutab.html">About ArtBrowser</a>
+                              <br><a onclick="show()">Sign Up</a>
+                              <br><a href="contact.html">Contact Us</a></p><br/><br/>
+                          <span>
+                                  <span class="footer_links"><img src="images/insta.png"></span>
+                                  <span class="footer_links"><img src="images/fb.png"></span>
+                                  <span class="footer_links"><img src="images/twitter.png"></span>
+                                  </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+</body>
+</html>

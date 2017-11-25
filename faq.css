@@ -1,0 +1,18 @@
+#hd_links{
+margin-top:50px;
+}
+hr {
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+
+}
+#change_hr{
+  margin-left: 220px;
+}
+@font-face {
+  font-family: 'futuralight';
+  src:url('/assets/fonts/futurabooklight.ttf') format('truetype');
+}
